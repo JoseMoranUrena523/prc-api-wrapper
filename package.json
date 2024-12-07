@@ -14,9 +14,12 @@
     "url": "https://github.com/JoseMoranUrena523",
     "email": "jose@josemoranurena.tech"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoseMoranUrena523/prc-api-wrapper.git"
+    "url": "git+https://github.com/JoseMoranUrena523/prc-api-wrapper.git"
   },
   "dependencies": {
     "axis": "^1.7.9"

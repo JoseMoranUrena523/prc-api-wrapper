@@ -1,0 +1,24 @@
+{
+  "name": "prc-api-wrapper",
+  "description": "An API wrapper for the Police Roleplay Community API.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/JoseMoranUrena523/prc-api-wrapper",
+  "license": "GPL-3.0-or-later",
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/JoseMoranUrena523/prc-api-wrapper/issues",
+    "email": "jose@josemoranurena.tech"
+  },
+  "author": {
+    "name": "Jose Moran Urena",
+    "url": "https://github.com/JoseMoranUrena523",
+    "email": "jose@josemoranurena.tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoseMoranUrena523/prc-api-wrapper.git"
+  },
+  "dependencies": {
+    "axis": "^1.7.9"
+  }
+}

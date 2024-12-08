@@ -1,7 +1,7 @@
 {
   "name": "prc-api-wrapper",
   "description": "An API wrapper for the Police Roleplay Community API.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/JoseMoranUrena523/prc-api-wrapper",
   "license": "GPL-3.0-or-later",
   "main": "index.js",

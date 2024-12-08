@@ -22,7 +22,7 @@ npm install prc-api-wrapper
 Create an instance of the `PRCApi` class with your `Server-Key` and (optionally) your `globalApiKey`:
 
 ```javascript
-const PRCApi = require('./prc-api-wrapper');
+const PRCApi = require('prc-api-wrapper');
 
 const prc = new PRCApi('your-server-key', 'your-global-api-key');
 ```

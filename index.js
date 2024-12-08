@@ -33,47 +33,57 @@ class PRCApi {
     }
   }
 
-  getServer() {
-    return this.request('/server');
+  async getServer() {
+    const data = await this.request('/server');
+    return data;
   }
-
-  getServerPlayers() {
-    return this.request('/server/players');
+  
+  async getServerPlayers() {
+      const data = await this.request('/server/players');
+      return data;
   }
-
-  getServerJoinLogs() {
-    return this.request('/server/joinlogs');
+  
+  async getServerJoinLogs() {
+      const data = await this.request('/server/joinlogs');
+      return data;
   }
-
-  getServerQueue() {
-    return this.request('/server/queue');
+  
+  async getServerQueue() {
+      const data = await this.request('/server/queue');
+      return data;
   }
-
-  getServerKillLogs() {
-    return this.request('/server/killlogs');
+  
+  async getServerKillLogs() {
+      const data = await this.request('/server/killlogs');
+      return data;
   }
-
-  getServerCommandLogs() {
-    return this.request('/server/commandlogs');
+  
+  async getServerCommandLogs() {
+      const data = await this.request('/server/commandlogs');
+      return data;
   }
-
-  getServerModCalls() {
-    return this.request('/server/modcalls');
+  
+  async getServerModCalls() {
+      const data = await this.request('/server/modcalls');
+      return data;
   }
-
-  getServerBans() {
-    return this.request('/server/bans');
+  
+  async getServerBans() {
+      const data = await this.request('/server/bans');
+      return data;
   }
-
-  getServerVehicles() {
-    return this.request('/server/vehicles');
+  
+  async getServerVehicles() {
+      const data = await this.request('/server/vehicles');
+      return data;
   }
-
-  executeCommand(command) {
-    if (!command) {
-      throw new Error('Command is required.');
-    }
-    return this.request('/server/command', 'POST', { "command": command });
+  
+  async executeCommand(command) {
+      if (!command) {
+          throw new Error('Command is required.');
+      }
+      const data = await this.request('/server/command', 'POST', { command });
+      return data;
   }
 }
 

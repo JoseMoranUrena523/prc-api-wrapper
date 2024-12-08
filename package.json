@@ -22,6 +22,6 @@
     "url": "git+https://github.com/JoseMoranUrena523/prc-api-wrapper.git"
   },
   "dependencies": {
-    "axis": "^1.7.9"
+    "axios": "^1.7.9"
   }
 }

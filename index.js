@@ -33,58 +33,62 @@ class PRCApi {
     }
   }
 
-  async getServer() {
-    const data = await this.request('/server');
-    return data;
+  wrapAsync(fn) {
+    return (...args) => {
+      let result;
+      fn(...args)
+        .then((data) => {
+          result = JSON.stringify(data);
+        })
+        .catch((err) => {
+          throw err;
+        });
+      return result;
+    };
   }
-  
-  async getServerPlayers() {
-      const data = await this.request('/server/players');
-      return data;
-  }
-  
-  async getServerJoinLogs() {
-      const data = await this.request('/server/joinlogs');
-      return data;
-  }
-  
-  async getServerQueue() {
-      const data = await this.request('/server/queue');
-      return data;
-  }
-  
-  async getServerKillLogs() {
-      const data = await this.request('/server/killlogs');
-      return data;
-  }
-  
-  async getServerCommandLogs() {
-      const data = await this.request('/server/commandlogs');
-      return data;
-  }
-  
-  async getServerModCalls() {
-      const data = await this.request('/server/modcalls');
-      return data;
-  }
-  
-  async getServerBans() {
-      const data = await this.request('/server/bans');
-      return data;
-  }
-  
-  async getServerVehicles() {
-      const data = await this.request('/server/vehicles');
-      return data;
-  }
-  
-  async executeCommand(command) {
-      if (!command) {
-          throw new Error('Command is required.');
-      }
-      const data = await this.request('/server/command', 'POST', { command });
-      return data;
-  }
+
+  getServer = this.wrapAsync(async () => {
+    return await this.request('/server');
+  });
+
+  getServerPlayers = this.wrapAsync(async () => {
+    return await this.request('/server/players');
+  });
+
+  getServerJoinLogs = this.wrapAsync(async () => {
+    return await this.request('/server/joinlogs');
+  });
+
+  getServerQueue = this.wrapAsync(async () => {
+    return await this.request('/server/queue');
+  });
+
+  getServerKillLogs = this.wrapAsync(async () => {
+    return await this.request('/server/killlogs');
+  });
+
+  getServerCommandLogs = this.wrapAsync(async () => {
+    return await this.request('/server/commandlogs');
+  });
+
+  getServerModCalls = this.wrapAsync(async () => {
+    return await this.request('/server/modcalls');
+  });
+
+  getServerBans = this.wrapAsync(async () => {
+    return await this.request('/server/bans');
+  });
+
+  getServerVehicles = this.wrapAsync(async () => {
+    return await this.request('/server/vehicles');
+  });
+
+  executeCommand = this.wrapAsync(async (command) => {
+    if (!command) {
+      throw new Error('Command is required.');
+    }
+    return await this.request('/server/command', 'POST', { command });
+  });
 }
 
 module.exports = PRCApi;

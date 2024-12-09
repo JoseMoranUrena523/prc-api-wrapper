@@ -30,27 +30,15 @@ const prc = new PRCApi('your-server-key', 'your-global-api-key');
 ### Example: Fetch Server Information
 
 ```javascript
-(async () => {
-  try {
-    const serverInfo = await prc.getServer();
-    console.log('Server Info:', serverInfo);
-  } catch (error) {
-    console.error('Error:', error.message);
-  }
-})();
+const serverInfo = prc.getServer();
+console.log('Server Info:', serverInfo);
 ```
 
 ### Example: Execute a Command
 
 ```javascript
-(async () => {
-  try {
-    const response = await prc.executeCommand(':h Testing the PRC API wrapper!');
-    console.log('Command Response:', response);
-  } catch (error) {
-    console.error('Error:', error.message);
-  }
-})();
+const response = JSON.parse(prc.executeCommand(':ban wscharff'));
+console.log("Command Response: " + response);
 ```
 
 ## Supported Endpoints
@@ -74,18 +62,6 @@ const prc = new PRCApi('your-server-key', 'your-global-api-key');
 | Method                | Description                  |
 |-----------------------|------------------------------|
 | `executeCommand(command)` | Execute a server command (e.g., `:m Hello`). |
-
-## Error Handling
-
-The wrapper will throw descriptive errors if a request fails. For example:
-
-```javascript
-try {
-  const result = await prc.getServer();
-} catch (error) {
-  console.error('API Error:', error.message);
-}
-```
 
 ## Requirements
 
